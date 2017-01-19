@@ -1,0 +1,16 @@
+<% provide(:page_title, "| New Post") %>
+
+<% provide(:posts_active, "active") %>
+
+<% provide(:page_header, "Add New Post") %>
+<% provide(:optional_description, "Form for add new post") %>
+
+<% provide(:level, "All Posts") %>
+<% provide(:location, "Add New Post") %>
+
+<div class="box box-default">
+  <div class="box-header with-border">
+    <%= link_to "Cancel", authors_posts_url, class: "btn btn-default btn-sm" %>
+  </div>
+  <%= render 'form', post: @post, url: authors_posts_url %>
+</div>

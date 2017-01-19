@@ -1,0 +1,21 @@
+<!--SC-->
+<div class="sidebar-popular-post" style="background: #fafafa; border: 1px solid #fafafa">
+  <h3 style="text-transform: capitalize; padding: 0 0 10px; border-bottom: 1px solid #e9e9e9; font-weight: 500; font-family: 'PT Serif', serif;">Registered SC <br> <small style="text-transform: capitalize">Dive into Study Club worth discussing.</small></h3>
+  <div class="popular-loop">
+    <ul>
+      <% @authors_sc.each do |author| %>
+          <li style="border-top: 1px solid #fafafa">
+            <%= link_to author_path(author), method: "get", class: "popular-item record-data", style: "padding: 15px 20px 0 45px" do %>
+                <div class="popular-number" style="font-family: 'PT Serif', serif; left: 0px">
+                  <span class="tech-logo">
+                    <%= image_tag author.avatar.url, class: "img-circle", height: "38px", width: "38px" %>
+                  </span>
+                </div>
+                <div class="popular-title" style="font-family: 'PT Serif', serif;"><%= author.name %></div>
+                <div class="popular-author" style="font-family: 'PT Serif', serif;">Has <%= author.pages.published.count %> Pages, <%= author.posts.published.count %> Posts and <%= author.events.published.count %> Events</div>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

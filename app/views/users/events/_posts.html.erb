@@ -1,0 +1,45 @@
+<div class="content-loop">
+  <div class="row">
+    <% @events.each do |event| %>
+        <div class="col-md-4">
+          <div class="post-item">
+            <div class="post-body" style="height: 65px">
+              <div class="post-author" style="color: rgba(0,0,0,.44)!important">
+                <span class="tech-logo">
+                  <%= image_tag event.author.avatar.url, class: "img-circle", height: "38px", width: "38px" %>
+                </span>
+              </div>
+              <div class="post-author" style="color: rgba(0,0,0,.44)!important; padding-left: 45px">
+                <span style="color: #01579B">
+                  <%= event.author.name.titleize %>
+                </span>
+              </div>
+              <div class="post-author" style="color: rgba(0,0,0,.44)!important; padding: 20px 45px">
+                <%= event.author.jenis %>
+              </small>
+              </div>
+            </div>
+
+            <div class="post-thumb">
+              <%= link_to event_path(event), method: "get", title: "#{event.title}", class: "record-data" do %>
+                  <%= image_tag event.image.url, class:"thumb-img", alt: "#{event.title}", height: "160" %>
+              <% end %>
+            </div>
+            <div class="post-body">
+              <div class="post-category">
+                <%= link_to event.title, event_path(event), method: "get", style: "font-family: 'PT Serif', serif; font-size: 15px; text-transform: capitalize" %>
+              </div>
+              <div class="post-author" style="color: rgba(0,0,0,.44)!important; font-size: 12px">
+                <%= event.display_day_published.titleize %>
+              </div>
+              <div class="post-publish" style="bottom: 20px; font-size: 12px">
+                <%= link_to event_path(event) do %>
+                    <i class="fa fa-calendar-plus-o"></i> <span><%= event.start.strftime("%A, %e %B %Y") %></span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<section id="pages">
+  <div class="content-loop">
+    <div class="row">
+      <% @pages.each do |page| %>
+          <div class="col-md-3">
+            <div class="post-item">
+              <div class="post-thumb">
+                <%= link_to page_path(page), method: "get", title: "#{page.title}", class: "record-data" do %>
+                    <%= image_tag page.image.url, class:"thumb-img", alt: "#{page.title}", height: "160" %>
+                <% end %>
+              </div>
+              <div class="post-body" style="height: 170px">
+                <div class="post-category">
+                  <%= link_to page.title, page_path(page), method: "get", style: "font-family: 'PT Serif', serif; font-size: 15px; text-transform: capitalize" %>
+                </div>
+                <div class="post-author" style="color: rgba(0,0,0,.44)!important; font-size: 12px">
+                  <%= page.display_date_published.titleize %>
+                </div>
+                <div class="post-publish" style="bottom: 20px; font-size: 12px">
+                  <%= link_to 'Read more...', page_path(page), method: "get" %>
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</section>

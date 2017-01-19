@@ -1,0 +1,17 @@
+<% @pages.each_with_index do |page, index| %>
+  <tr>
+    <td><%= @pages.offset + index + 1 %></td>
+    <td><%= truncate(page.title, length: 40) %></td>
+    <td><%= page.display_date_published %></td>
+    <td>
+      <% if page.published? %>
+        <%= link_to "Unpublish", unpublish_authors_page_path(page), method: :put, class: "badge bg-default" %>
+        <%= link_to "Show", page_path(page), method: :get, class: "badge bg-default", target: "_blank" %>
+      <% else %>
+        <%= link_to "Publish", publish_authors_page_path(page), method: :put, class: "badge bg-green" %>
+      <% end %>
+      <%= link_to "Edit", edit_authors_page_path(page), method: :get, class: "badge bg-default" %>
+      <%= link_to "Delete", authors_page_path(page), method: :delete, data: { confirm: "are you sure?" }, class: "badge bg-default" %>
+    </td>
+  </tr>
+<% end %>

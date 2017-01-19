@@ -1,0 +1,55 @@
+<div class="UA-container-frame">
+  <div id="UA-container" class="v3 headerFixed dynamicFooter  bannersnack container-home container_big lang-en">
+    <div id="UA-header" class="v5 banner_shadow_header bannersnack  home show-phone">
+      <input type="hidden" id="UAisLogged" value="0"/>
+
+      <div class="header-container" style="font-family: 'PT Serif', serif;">
+        <div class="logo">
+          <div class="logo-cont">
+            <a href="/" title="Logo STMIK Bumigora">
+              <img src="https://s27.postimg.org/hnn7xryyr/logo.png" height="60"/>
+            </a>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="menu-group menu-group-prices">
+            <div class="menu-top-single">
+              <a class="main-menu-item" href="/">HOME</a>
+            </div>
+          </div>
+
+          <div class="menu-group">
+            <div class="menu-top menu-group-banner-maker">
+              <a class="main-menu-item" href="javascript:;">
+                <span>LIST Of ORGANIZATION</span>
+                <i class="arrow-down"></i>
+              </a>
+            </div>
+            <div class="menu-hover">
+              <table>
+                <tr>
+                  <td>
+                    <% @authors.each do |author| %>
+                        <%= link_to author.name, author_path(author), class: "menu-item about-the-app-link"  %>
+                    <% end %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="menu-group menu-group-prices">
+            <div class="menu-top-single">
+              <a class="main-menu-item" href="/blog">BLOG</a>
+            </div>
+          </div>
+          <div class="menu-group menu-group-prices">
+            <div class="menu-top-single">
+              <a class="main-menu-item" href="/event">EVENT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

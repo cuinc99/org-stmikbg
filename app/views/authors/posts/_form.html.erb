@@ -1,0 +1,53 @@
+<%= form_for(post, url: url, html: { multipart: true }) do |f| %>
+
+  <div class="box-body">
+    <% if post.errors.any? %>
+      <div class="callout callout-danger">
+        <% post.errors.full_messages.each do |msg| %>
+          <ul>
+            <li> <%= msg %> </li>
+          </ul>
+        <% end %>
+      </div>
+      <hr>
+    <% end %>
+
+    <div class="form-group">
+      <% if Category.all.present? %>
+         <label style="font-weight: 300">
+           Category:
+           <% Category.all.each do |category| %>
+            <%= check_box_tag "post[category_ids][]", category.id, f.object.categories.include?(category), class: "minimal" %>
+            <%= category.title %>
+           <% end %>
+         </label>
+      <% else %>
+        <i>Sorry, no category yet...</i>
+        <%= link_to "Click! to create new category", new_authors_category_path, class: "label label-success" %>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :banner, "Banner Image:", style: "font-weight: 300" %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title:" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :tags, "Tags (separated by commas):", style: "font-weight: 300" %>
+      <%= f.text_field :tag_list, value: f.object.tag_list.to_s, class: "form-control" %>
+    </div>
+
+  </div>
+  <div class="box-footer">
+    <%= f.submit "Finish & Save", class: "btn bg-purple btn-flat" %>
+  </div>
+
+<% end %>

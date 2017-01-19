@@ -1,0 +1,16 @@
+<% provide(:page_title, "| Edit #{@event.title}") %>
+
+<% provide(:events_active, "active") %>
+
+<% provide(:page_header, "Edit Event") %>
+<% provide(:optional_description, "Form for edit #{@event.title.upcase}") %>
+
+<% provide(:level, "All Events") %>
+<% provide(:location, "Edit #{@event.title}") %>
+
+<div class="box box-default">
+  <div class="box-header with-border">
+    <%= link_to "Cancel", authors_events_url, class: "btn btn-default btn-sm" %>
+  </div>
+  <%= render 'form', event: @event, url: authors_event_url(@event) %>
+</div>

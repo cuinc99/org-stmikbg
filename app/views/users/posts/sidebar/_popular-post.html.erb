@@ -1,0 +1,22 @@
+<div class="sidebar-popular-post" style="background: #fafafa; border: 1px solid #fafafa">
+  <h3 style="text-transform: capitalize; padding: 0 0 10px; border-bottom: 1px solid #e9e9e9; font-weight: 500; font-family: 'PT Serif', serif;">Popular Posts <br> <small style="text-transform: capitalize">Take a read with popular posts you may have missed.</small></h3>
+  <div class="popular-loop">
+    <ul>
+      <% @most_popular.each_with_index do |mp, i| %>
+      <li style="border-top: 1px solid #fafafa">
+        <%= link_to post_path(mp), method: "get", class: "popular-item record-data", style: "padding: 15px 20px 0 45px" do %>
+            <div class="popular-number" style="font-family: 'PT Serif', serif;"><%= i+1 %></div>
+            <div class="popular-title" style="font-family: 'PT Serif', serif;"><%= mp.title %></div>
+            <div class="popular-author" style="font-family: 'PT Serif', serif;"><%= mp.impressionist_count %> Views ~ By <%= mp.author.name %></div>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+

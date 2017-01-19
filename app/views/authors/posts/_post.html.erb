@@ -1,0 +1,19 @@
+<% @posts.each_with_index do |post, index| %>
+  <tr>
+    <td><%= @posts.offset + index + 1 %></td>
+    <td><%= image_tag post.image.url(:thumb) %></td>
+    <td><%= truncate(post.title, length: 40) %></td>
+    <td><%= post.display_category %></td>
+    <td><%= post.display_day_published %></td>
+    <td>
+      <% if post.published? %>
+        <%= link_to "Unpublish", unpublish_authors_post_path(post), method: :put, class: "badge bg-default" %>
+        <%= link_to "Show", post_path(post), method: :get, class: "badge bg-default", target: "_blank" %>
+      <% else %>
+        <%= link_to "Publish", publish_authors_post_path(post), method: :put, class: "badge bg-green" %>
+      <% end %>
+      <%= link_to "Edit", edit_authors_post_path(post), method: :get, class: "badge bg-default" %>
+      <%= link_to "Delete", authors_post_path(post), method: :delete, data: { confirm: "are you sure?" }, class: "badge bg-default" %>
+    </td>
+  </tr>
+<% end %>

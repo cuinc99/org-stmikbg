@@ -1,0 +1,16 @@
+<% provide(:page_title, "| New Page") %>
+
+<% provide(:pages_active, "active") %>
+
+<% provide(:page_header, "Add New Page") %>
+<% provide(:optional_description, "Form for add new page") %>
+
+<% provide(:level, "All Pages") %>
+<% provide(:location, "Add New Page") %>
+
+<div class="box box-default">
+  <div class="box-header with-border">
+    <%= link_to "Cancel", authors_pages_url, class: "btn btn-default btn-sm" %>
+  </div>
+  <%= render 'form', page: @page, url: authors_pages_url %>
+</div>

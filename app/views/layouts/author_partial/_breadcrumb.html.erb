@@ -1,0 +1,10 @@
+<section class="content-header">
+  <h1>
+    <%= yield :page_header %>
+    <small><%= yield :optional_description %></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> <%= yield :level %></a></li>
+    <li class="active"><%= yield :location %></li>
+  </ol>
+</section>

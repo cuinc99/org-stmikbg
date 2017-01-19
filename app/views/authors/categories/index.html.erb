@@ -1,0 +1,41 @@
+<% provide(:page_title, "| All Categories") %>
+
+<% provide(:categories_active, "active") %>
+
+<% provide(:page_header, "All Categories") %>
+<% provide(:optional_description, "Listing for all categories") %>
+
+<% provide(:level, "All Categories") %>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="box box-default">
+      <div class="box-header with-border">
+        <i class="fa fa-pencil-square-o"></i> Add New Category
+      </div>
+      <%= render 'form', category: @category, url: authors_categories_url %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="box">
+      <div class="box-header with-border">
+        <i class="fa fa-twitch"> Listing for Categories</i>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 10px">#</th>
+            <th>Title</th>
+            <th>Created at</th>
+            <th>Option</th>
+          </tr>
+
+          <%= render 'post' %>
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/user_partial/head' %>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  </head>
+
+  <%= render 'layouts/user_partial/header' %>
+  <%= render 'layouts/user_partial/jumbotron' if (params[:controller] == 'users/home') %>
+  <br>
+  <body class="hold-transition skin-purple layout-boxed layout-top-nav home language-php" style="background: #fafafa; font-family: 'PT Serif', serif;">
+
+    <div class="wrapper" style="box-shadow: 1px 1px 2px 0 #fafafa;">
+
+      <div class="content-wrapper" style="background-color: #fafafa;">
+
+        <section class="content">
+          <%= yield %>
+        </section>
+      </div>
+
+    </div>
+    <br>
+    <%= render 'layouts/user_partial/footer' %>
+    <%= render 'layouts/user_partial/script' %>
+  </body>
+</html>

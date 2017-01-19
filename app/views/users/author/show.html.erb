@@ -1,0 +1,45 @@
+<% provide(:first_title, "Author") %>
+<% provide(:second_title, @author.name) %>
+
+
+<div class="col-md-3" style="float: none; margin: 0 auto; ">
+  <div class="box box-warning" style="border-top: 3px solid #78909C; border-radius: 7px">
+    <div class="box-body box-profile">
+      <%= image_tag @author.avatar.url, class: "profile-user-img img-responsive img-circle", style: "border: 3px solid #CFD8DC" %>
+      <h3 class="profile-username text-center" style="font-family: 'PT Serif', serif;">
+        <%= @author.name %>
+      </h3>
+      <p class="text-muted text-center"><%= @author.jenis %></p>
+    </div>
+  </div>
+</div>
+
+<%= render "users/author/info" %>
+
+<% if @pages.present? %>
+    <hr>
+    <h2 style="font-family: 'PT Serif', serif;">
+      <i class="fa fa-credit-card"></i> All Pages
+    </h2>
+    <%= render "users/author/pages" %>
+<% end %>
+
+<% if @posts.present? %>
+    <hr>
+    <h2 style="font-family: 'PT Serif', serif;">
+      <i class="fa fa-newspaper-o"></i> Latest Posts
+    </h2>
+    <%= render "users/author/posts" %>
+<% end %>
+
+<% if @events.present? %>
+    <hr>
+    <h2 style="font-family: 'PT Serif', serif;">
+      <i class="fa fa-calendar-plus-o "></i> New Event
+    </h2>
+    <%= render "users/author/events" %>
+<% end %>
+
+
+
+

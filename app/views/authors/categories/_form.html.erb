@@ -1,0 +1,24 @@
+<%= form_for(category, url: url) do |f| %>
+
+  <div class="box-body">
+    <% if category.errors.any? %>
+      <div class="callout callout-danger">
+        <% category.errors.full_messages.each do |msg| %>
+          <ul>
+            <li> <%= msg %> </li>
+          </ul>
+        <% end %>
+      </div>
+      <hr>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title:" %>
+    </div>
+
+  </div>
+  <div class="box-footer">
+    <%= f.submit "Finish & Save", class: "btn bg-purple btn-flat" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,19 @@
+<% provide(:first_title, "Organisasi STMIK Bumigora Mataram") %>
+<% provide(:second_title, "Blog") %>
+
+<div class="row">
+  <div class="col-md-9">
+    <%= render 'users/posts/posts' %>
+
+      <div class="apple_pagination" style="background: #fafafa;">
+        <%= will_paginate @posts, :container => false %>
+      </div>
+
+  </div>
+  <div class="col-md-3">
+    <%= render 'users/posts/sidebar/search' %>
+    <%= render 'users/posts/sidebar/popular-post' %>
+    <%= render 'users/posts/sidebar/registered-ukm' %>
+    <%= render 'users/posts/sidebar/registered-sc' %>
+  </div>
+</div>

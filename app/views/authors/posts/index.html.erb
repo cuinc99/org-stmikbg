@@ -1,0 +1,53 @@
+<% provide(:page_title, "| All Post") %>
+
+<% provide(:posts_active, "active") %>
+
+<% provide(:page_header, "All Posts") %>
+<% provide(:optional_description, "Listing for all posts") %>
+
+<% provide(:level, "All Posts") %>
+
+<div class="box">
+  <div class="box-header with-border">
+    <%= link_to new_authors_post_path, method: :get, class: "btn btn-default btn-sm" do %>
+      <i class="fa fa-pencil-square-o"> New Post</i>
+    <% end %>
+
+    <div class="box-tools">
+
+        <%= form_tag authors_posts_path, method: :get, class: "input-group input-group-sm", style: "width: 150px;" do %>
+          <%= text_field_tag :search, params[:search], class: "form-control pull-right", placeholder: "Search"  %>
+          <div class="input-group-btn">
+            <%= submit_tag "Search", class: "btn btn-default" %>
+          </div>
+        <% end %>
+
+    </div>
+
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <table class="table table-bordered">
+      <tr>
+        <th style="width: 10px">#</th>
+        <th style="width: 50px">Banner</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Published at</th>
+        <th>Option</th>
+      </tr>
+
+      <%= render 'post' %>
+
+    </table>
+  </div>
+  <!-- /.box-body -->
+  <div class="box-footer clearfix">
+    <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @posts, :container => false %>
+  </div>
+  </div>
+</div>

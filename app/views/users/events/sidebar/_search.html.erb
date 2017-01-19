@@ -1,0 +1,12 @@
+<div class="sidebar-popular-post" style="background: #fafafa; border: 1px solid #fafafa">
+  <h3 style="text-transform: capitalize; padding: 0 0 10px; font-weight: 500; font-family: 'PT Serif', serif;">Search Events <br> <small style="text-transform: capitalize">Do a search for the events that you need.</small></h3>
+
+    <div class="search-box">
+      <form class="searchbox-input" id="searchbox_input" role="form" action="<%= events_path %>" method="get">
+        <input type="text" class="form-control search-input" placeholder="Your events keyword here..." name="search" value="<%= params[:search] %>">
+      </form>
+    </div>
+
+</div>
+
+

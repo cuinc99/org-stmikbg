@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/author_partial/head' %>
+</head>
+
+<body class="hold-transition skin-purple layout-boxed sidebar-mini sidebar-collapse">
+<div class="wrapper">
+
+  <%= render 'layouts/author_partial/header' %>
+  <%= render 'layouts/author_partial/nav' %>
+
+  <div class="content-wrapper">
+    <%= render 'layouts/author_partial/breadcrumb' %>
+
+    <section class="content">
+      <%= render 'layouts/author_partial/notice' %>
+      <%= yield %>
+    </section>
+  </div>
+
+  <%= render 'layouts/author_partial/footer' %>
+  <%= render 'layouts/author_partial/script' %>
+
+</div>
+</body>
+</html>

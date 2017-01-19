@@ -1,0 +1,11 @@
+<% @categories.each_with_index do |category, index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td><%= category.title %></td>
+    <td><%= category.display_created_at %></td>
+    <td>
+      <%= link_to "Edit", edit_authors_category_path(category), method: :get, class: "badge bg-default" %>
+      <%= link_to "Delete", authors_category_path(category), method: :delete, data: { confirm: "are you sure?" }, class: "badge bg-default" %>
+    </td>
+  </tr>
+<% end %>

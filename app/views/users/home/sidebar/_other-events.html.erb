@@ -1,0 +1,16 @@
+<div class="sidebar-popular-post" style="background: #fafafa; border: 1px solid #fafafa">
+  <h3 style="text-transform: capitalize; padding: 0 0 10px; border-bottom: 1px solid #e9e9e9; font-weight: 500; font-family: 'PT Serif', serif;">Other Events <br> <small style="text-transform: capitalize">Events accessibility for all.</small></h3>
+  <div class="popular-loop">
+    <ul>
+      <% @events.each_with_index do |event, i| %>
+          <li style="border-top: 1px solid #fafafa">
+            <%= link_to event_path(event), method: "get", class: "popular-item record-data", style: "padding: 15px 20px 0 45px" do %>
+                <div class="popular-number" style="font-family: 'PT Serif', serif;"><%= i+1 %></div>
+                <div class="popular-title" style="font-family: 'PT Serif', serif;"><%= event.title %></div>
+                <div class="popular-author" style="font-family: 'PT Serif', serif;"><%= event.start.strftime("%a, %e %b %y") %> ~ By <%= event.author.name %></div>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

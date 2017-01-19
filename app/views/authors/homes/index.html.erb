@@ -1,0 +1,100 @@
+<% provide(:page_title, "| Home") %>
+
+<% provide(:home_active, "active") %>
+
+<% provide(:page_header, "Home") %>
+<% provide(:optional_description, "Information about your website") %>
+<% provide(:level, "Home") %>
+
+<div class="row">
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">PAGES</span>
+        <span class="info-box-text"><%= "#{@your_pages.count} published pages" %></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-number"> ALL POSTS </span>
+        <span class="info-box-text"><%= "#{@posts.count} published posts" %></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+
+  <!-- fix for small devices only -->
+  <div class="clearfix visible-sm-block"></div>
+
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">YOUR POSTS</span>
+        <span class="info-box-text"><%= "#{@your_posts.count} published posts" %></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">CATEGORIES</span>
+        <span class="info-box-text"><%= "#{@categories.count} categories" %></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <div class="box box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Category Information</h3>
+
+        <div class="box-tools">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <ul class="nav nav-pills nav-stacked">
+          <% @categories.each do |category| %>
+          <li>
+            <a href="#"><i class="fa fa-twitch"></i> <%= category.title %>
+              <% if category.posts.present? %>
+                <span class="label label-primary pull-right">
+                  <%= "#{category.posts.count} published posts" %>
+                </span>
+              <% else %>
+                <span class="label label-warning pull-right">
+                  Upss..! no post
+                </span>
+              <% end %>
+            </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- /.box-body -->
+    </div>
+  </div>
+</div>

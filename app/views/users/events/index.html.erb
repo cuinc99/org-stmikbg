@@ -1,0 +1,18 @@
+<% provide(:first_title, "Organisasi STMIK Bumigora Mataram") %>
+<% provide(:second_title, "Event") %>
+
+<div class="row">
+  <div class="col-md-9">
+    <%= render 'users/events/posts' %>
+
+      <div class="apple_pagination" style="background: #fafafa;">
+        <%= will_paginate @events, :container => false %>
+      </div>
+
+  </div>
+  <div class="col-md-3">
+    <%= render 'users/events/sidebar/search' %>
+    <%= render 'users/events/sidebar/popular-event' %>
+    <%= render 'users/events/sidebar/popular-post' %>
+  </div>
+</div>

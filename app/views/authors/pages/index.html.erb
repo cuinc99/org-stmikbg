@@ -1,0 +1,39 @@
+<% provide(:page_title, "| All Pages") %>
+
+<% provide(:pages_active, "active") %>
+
+<% provide(:page_header, "All Pages") %>
+<% provide(:optional_description, "Listing for all pages") %>
+
+<% provide(:level, "All Pages") %>
+
+<div class="box">
+  <div class="box-header with-border">
+    <%= link_to new_authors_page_path, method: :get, class: "btn btn-default btn-sm" do %>
+      <i class="fa fa-pencil-square-o"> New Page</i>
+    <% end %>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <table class="table table-bordered">
+      <tr>
+        <th style="width: 10px">#</th>
+        <th>Title</th>
+        <th>Published at</th>
+        <th>Option</th>
+      </tr>
+
+      <%= render 'post' %>
+
+    </table>
+  </div>
+  <!-- /.box-body -->
+  <div class="box-footer clearfix">
+    <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @pages %>
+    </div>
+    <%= will_paginate @pages, :container => false %>
+  </div>
+  </div>
+</div>

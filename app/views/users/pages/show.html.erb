@@ -1,0 +1,146 @@
+<% provide(:first_title, "Page") %>
+<% provide(:second_title, @page.title) %>
+
+<!-- SECTION UPDATES -->
+<section class="content-wrapper" style="background-color: #fafafa">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <article class="main-content margin-bottom tutspaging" style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1)">
+          <!--<ol class="breadcrumb cp-breadcrumb">-->
+          <!--<li><a href="">Articles</a></li>-->
+          <!--<li><a href="">Opini</a></li>-->
+          <!--<li class="active">Pentingnya Kemampuan Komunikasi Bagi Seorang Programmer</li>-->
+          <!--</ol>-->
+
+          <div class="content-head">
+            <div class="content-author">
+              <div class="media">
+                <div class="media-left">
+                  <div class="content-avatar">
+                    <%= link_to author_path(@page.author) do %>
+                        <%= image_tag @page.author.avatar.url, class: "img-avatar" %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="media-body">
+                  <%= link_to @page.author.name, author_path(@page.author), method: "get", class: "content-name" %>
+                  <div class="content-position"><%= "Unit Kegiatan Mahasiswa" %></div>
+                  <div class="content-date"><%= @page.display_date_published %></div>
+                </div>
+              </div>
+            </div>
+            <h1 style="font-family: 'PT Serif', serif;"><%= @page.title %></h1>
+          </div>
+
+          <%= image_tag @page.image.url(:medium), class: "full-width" %>
+
+          <div class="content-body">
+
+            <div class="step-contents tab-content">
+              <div class="tab-pane step active">
+                <div id="main_content_post" style="font-size: 22px">
+                  <%= @page.content.html_safe %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!--<div class="thanks-bottom-wrapper">-->
+          <!--<h3>Is this helpful?</h3>-->
+
+          <!--<div class="respect-wrapper">-->
+          <!--<button type="button" class="btn btn-cp btn-thanks record-data margin-md-right" post-id="14493" data-action="thanks-article-bottom" data-position="article-detail" data-id="14493">YES, THANKS</button>-->
+
+          <!--<a href="#" class="btn-see-thanks">&nbsp;&nbsp;Thanked by <span id="thank_number_bottom">9</span> peoples</a>-->
+          <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="socialshare-bottom-wrapper">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-6">-->
+          <!--<h3>Share This Post</h3>-->
+          <!--</div>-->
+          <!--<div class="col-md-6">-->
+          <!--<div class="share-icon-wrapper">-->
+          <!--<a href="#" text="Pentingnya Kemampuan Komunikasi Bagi Seorang Programmer" url="https://www.codepolitan.com/pentingnya-kemampuan-komunikasi-bagi-seorang-programmer-586fd07da86fb" social="facebook" class="btn-share social-facebook"><i class="fa fa-facebook-official"></i></a>-->
+          <!--<a href="#" text="Pentingnya Kemampuan Komunikasi Bagi Seorang Programmer" url="https://www.codepolitan.com/pentingnya-kemampuan-komunikasi-bagi-seorang-programmer-586fd07da86fb" social="twitter" class="btn-share social-twitter"><i class="fa fa-twitter"></i></a>-->
+          <!--<a href="#" text="Pentingnya Kemampuan Komunikasi Bagi Seorang Programmer" url="https://www.codepolitan.com/pentingnya-kemampuan-komunikasi-bagi-seorang-programmer-586fd07da86fb" social="googleplus" class="btn-share social-google-plus"><i class="fa fa-google-plus"></i></a>-->
+          <!--<a href="#" text="Pentingnya Kemampuan Komunikasi Bagi Seorang Programmer" url="https://www.codepolitan.com/pentingnya-kemampuan-komunikasi-bagi-seorang-programmer-586fd07da86fb" social="linkedin" class="btn-share social-linkedin"><i class="fa fa-linkedin-square"></i></a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+        </article>
+
+
+        <!-- ARTIKEL TERKAIT -->
+        <!--<div class="content-loop">-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-6">-->
+        <!--<div class="post-item small-post small-margin">-->
+        <!--<div class="post-thumb">-->
+        <!--<a href="https://www.codepolitan.com/kenapa-wanita-harus-ngoding-581e1cec65ba8-18888" title="Kenapa Wanita Harus Ngoding?" class="record-data" data-action="related-article" data-position="article-detail">-->
+        <!--<img src="https://www.codepolitan.com/./uploads/image/source/18888/computerfemale-image(250x150-crop).png" class="thumb-img" alt="Kenapa Wanita Harus Ngoding?">-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--<div class="post-body">-->
+        <!--<div class="post-category"><a href="https://www.codepolitan.com/category/opini">Opini</a></div>-->
+        <!--<h3 class="post-title" style="font-size:16px;">-->
+        <!--<a href="https://www.codepolitan.com/kenapa-wanita-harus-ngoding-581e1cec65ba8-18888" title="Kenapa Wanita Harus Ngoding?" class="record-data" data-action="related-article" data-position="article-detail" data-id="https://www.codepolitan.com/kenapa-wanita-harus-ngoding-581e1cec65ba8-18888">-->
+        <!--Kenapa Wanita Harus Ngoding?-->
+        <!--</a>-->
+        <!--</h3>-->
+        <!--<div class="post-author"><a href="https://www.codepolitan.com/coder/istidana">Istidana Harjanti</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!-- END: ARTIKEL TERKAIT -->
+
+
+        <!-- COMMENT AREA -->
+        <div id="disqus_thread"></div>
+        <script>
+
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+             var disqus_config = function () {
+             this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+             this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+             };
+             */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//stmik-bumigora.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <!-- END: COMMENT AREA -->
+
+
+      </div>
+
+      <div class="col-md-4">
+
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- END: SECTION UPDATES -->
+
+
+<!-- END: MAIN WRAPPER -->
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-587d5f4e157950b4"></script>

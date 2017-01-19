@@ -1,0 +1,16 @@
+<% provide(:page_title, "| Edit #{@post.title}") %>
+
+<% provide(:posts_active, "active") %>
+
+<% provide(:page_header, "Edit Post") %>
+<% provide(:optional_description, "Form for edit #{@post.title.upcase}") %>
+
+<% provide(:level, "All Posts") %>
+<% provide(:location, "Edit #{@post.title}") %>
+
+<div class="box box-default">
+  <div class="box-header with-border">
+    <%= link_to "Cancel", authors_posts_url, class: "btn btn-default btn-sm" %>
+  </div>
+  <%= render 'form', post: @post, url: authors_post_url(@post) %>
+</div>

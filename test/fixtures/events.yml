@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  status: MyText
+  quota: 1
+  start: 2017-01-16 12:18:38
+  end: 2017-01-16 12:18:38
+  location: MyString
+  link_register: MyString
+  published_at: 2017-01-16 12:18:38
+  published: false
+  slug: MyString
+  author_id: 1
+
+two:
+  title: MyString
+  description: MyText
+  status: MyText
+  quota: 1
+  start: 2017-01-16 12:18:38
+  end: 2017-01-16 12:18:38
+  location: MyString
+  link_register: MyString
+  published_at: 2017-01-16 12:18:38
+  published: false
+  slug: MyString
+  author_id: 1
