@@ -15,7 +15,7 @@
     <div class="form-group">
       <% if Category.all.present? %>
          <label style="font-weight: 300">
-           Category:
+           Choose Post Category: <br>
            <% Category.all.each do |category| %>
             <%= check_box_tag "post[category_ids][]", category.id, f.object.categories.include?(category), class: "minimal" %>
             <%= category.title %>
