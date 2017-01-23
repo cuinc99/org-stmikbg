@@ -47,10 +47,12 @@ class Author < ApplicationRecord
   end
 
   enum jenis: {
+      "Badan Eksekutif Mahasiswa" => "Badan Eksekutif Mahasiswa",
       "Unit Kegiatan Mahasiswa" => "Unit Kegiatan Mahasiswa",
       "Study Club" => "Study Club"
   }
 
+  scope :bem, -> { where(jenis: "Badan Eksekutif Mahasiswa") }
   scope :ukm, -> { where(jenis: "Unit Kegiatan Mahasiswa") }
   scope :sc, -> { where(jenis: "Study Club") }
 end
