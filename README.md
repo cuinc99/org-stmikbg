@@ -1,32 +1,17 @@
 # ORG-STMIKBG
 
-1. Ruby version 2.3.0
-2. Rails version 5.0.1
+CMS Application for all of Organization in **STMIK Bumigora Mataram** such as Badan Eksekutif Mahasiswa (BEM), Lembaga Dakwah Kampus (LDK), etc.
 
-## Installation
+## Built With
 
-TODO: Describe the installation process
+* [Ruby](https://www.ruby-lang.org/en/) - Version 2.3.0
+* [Ruby on Rails](http://rubyonrails.org/) - Version 5.0.1
 
-## Usage
+## Authors
 
-TODO: Write usage instructions
-
-## Contributing
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
-## History
-
-TODO: Write history
-
-## Credits
-
-TODO: Write credits
+* **Wildan Ims** - *Initial work* - [cuinc99](https://github.com/cuinc99)
 
 ## License
 
-TODO: Write license
+This project is licensed under the MIT License
+
